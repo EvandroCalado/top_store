@@ -3,6 +3,7 @@ import { APP_DESCRIPTION, APP_NAME, APP_SERVER_URL } from '@/lib/constants';
 import '@/styles/globals.css';
 
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
@@ -39,8 +40,17 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang='pt-BR'>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+    <html lang='pt-BR' suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased`}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='light'
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 };

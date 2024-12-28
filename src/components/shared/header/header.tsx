@@ -3,6 +3,7 @@ import { ShoppingCart, UserIcon } from 'lucide-react';
 import Link from 'next/link';
 
 import { Logo } from '../logo';
+import { ThemeToggle } from '../theme-toggle';
 
 export const Header = () => {
   return (
@@ -11,6 +12,7 @@ export const Header = () => {
         <Logo />
 
         <div className='space-x-2'>
+          <ThemeToggle />
           <Button asChild variant='ghost'>
             <Link href='/cart'>
               <ShoppingCart /> Cart
