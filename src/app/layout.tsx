@@ -1,4 +1,7 @@
+import { APP_DESCRIPTION, APP_NAME, APP_SERVER_URL } from '@/lib/constants';
+
 import '@/styles/globals.css';
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -8,8 +11,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Top Store',
-  description: 'Modern e-commerce for you!',
+  title: {
+    template: `%s | Topstore`,
+    default: `${APP_NAME}`,
+  },
+  description: `${APP_DESCRIPTION}`,
+  metadataBase: new URL(`${APP_SERVER_URL}`),
   icons: {
     icon: [
       {
