@@ -5,6 +5,9 @@ import { Footer } from '.';
 const meta: Meta = {
   title: 'Components/Footer',
   component: Footer,
+  parameters: {
+    layout: 'fullscreen',
+  },
   tags: ['autodocs'],
 };
 

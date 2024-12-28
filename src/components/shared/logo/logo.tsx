@@ -1,29 +1,12 @@
-import { APP_NAME } from '@/lib/constants';
-import Image from 'next/image';
+import { BagIcon } from '@/icons/bag-icon';
+import { LogoIcon } from '@/icons/logo-icon';
 import Link from 'next/link';
 
 export const Logo = () => {
   return (
-    <div>
-      <Link href='/'>
-        <Image
-          src='./Logo.svg'
-          alt={`${APP_NAME}`}
-          width={120}
-          height={48}
-          priority
-          className='hidden lg:block'
-        />
-
-        <Image
-          src='/logo.ico'
-          alt={`${APP_NAME}`}
-          width={24}
-          height={24}
-          priority
-          className='lg:hidden'
-        />
-      </Link>
-    </div>
+    <Link href='/'>
+      <LogoIcon className='dark:text-white w-36 h-max max-lg:hidden' />
+      <BagIcon className='dark:text-white w-6 h-10 lg:hidden' />
+    </Link>
   );
 };

@@ -8,9 +8,7 @@ export const Header = () => {
   return (
     <header className='w-full border-b'>
       <div className='wrapper flex-between'>
-        <div className='flex-start'>
-          <Logo />
-        </div>
+        <Logo />
 
         <div className='space-x-2'>
           <Button asChild variant='ghost'>
@@ -18,7 +16,7 @@ export const Header = () => {
               <ShoppingCart /> Cart
             </Link>
           </Button>
-          <Button asChild variant='ghost'>
+          <Button asChild>
             <Link href='/sign-in'>
               <UserIcon /> Sign In
             </Link>
