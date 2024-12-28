@@ -1,3 +1,4 @@
+import { Footer, Header } from '@/components/shared';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,7 +12,9 @@ const RootLayout = ({
 }>) => {
   return (
     <div className='flex h-screen flex-col'>
+      <Header />
       <main className='flex-1 wrapper'>{children}</main>
+      <Footer />
     </div>
   );
 };
