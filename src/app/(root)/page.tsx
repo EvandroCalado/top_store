@@ -1,12 +1,11 @@
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+import { ProductList } from '@/components/product';
+import sampleData from '@/db/sample-data';
 
-const HomePage = async () => {
-  await delay(2000);
-
+const HomePage = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
+    <>
+      <ProductList data={sampleData.products} title='Newest Arrivals' />
+    </>
   );
 };
 
