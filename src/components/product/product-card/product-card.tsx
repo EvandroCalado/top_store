@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Product } from '../product-list';
+import { ProductPrice } from '../product-price';
 
 type ProductCardPros = {
   product: Product;
@@ -10,8 +11,8 @@ type ProductCardPros = {
 
 export const ProductCard = ({ product }: ProductCardPros) => {
   return (
-    <Card className='w-full max-w-sm'>
-      <CardHeader className='p-0 items-center'>
+    <Card className='w-full max-w-sm group'>
+      <CardHeader className='p-0 items-center overflow-hidden'>
         <Link href={`/products/${product.slug}`}>
           <Image
             src={product.images[0]}
@@ -19,20 +20,24 @@ export const ProductCard = ({ product }: ProductCardPros) => {
             width={300}
             height={300}
             priority
+            className='group-hover:scale-105 transition-transform duration-300 object-contain'
           />
         </Link>
       </CardHeader>
 
       <CardContent className='p-4 grid gap-4'>
         <div className='text-xs text-muted-foreground'>{product.brand}</div>
-        <Link href={`/products/${product.slug}`}>
+        <Link
+          href={`/products/${product.slug}`}
+          className='group-hover:text-yellow-400 duration-300'
+        >
           <h2 className='text-sm font-medium'>{product.name}</h2>
         </Link>
 
         <div className='flex-between gap-4'>
           <p>{product.rating} Stars</p>
           {product.stock > 0 ? (
-            <p className='font-bold'>{product.price}</p>
+            <ProductPrice value={Number(product.price)} />
           ) : (
             <p className='text-destructive'>Out of stock</p>
           )}
