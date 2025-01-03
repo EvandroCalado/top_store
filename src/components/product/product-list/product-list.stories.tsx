@@ -7,7 +7,7 @@ const meta: Meta = {
   title: 'Components/Product/ProductList',
   component: ProductList,
   args: {
-    data: sampleData.products,
+    data: sampleData.products.slice(0, 4),
     title: 'Newest Arrivals',
   },
   parameters: {
