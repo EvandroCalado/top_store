@@ -1,5 +1,5 @@
 const LoadingPage = () => (
-  <div className='flex items-center justify-center w-full h-screen'>
+  <div className='flex items-center justify-center w-full h-full'>
     <svg
       className='w-14 h-14 animate-spin fill-yellow-400'
       viewBox='0 0 100 101'
