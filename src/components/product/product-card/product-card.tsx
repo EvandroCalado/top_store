@@ -11,7 +11,7 @@ type ProductCardPros = {
 
 export const ProductCard = ({ product }: ProductCardPros) => {
   return (
-    <Card className='w-full max-w-sm group'>
+    <Card className='w-full max-w-sm group overflow-hidden'>
       <CardHeader className='p-0 items-center overflow-hidden'>
         <Link href={`/products/${product.slug}`}>
           <Image
